@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.actions.report.xml" id="aeroo_cash_register_report_payments_odt">
+			<field name="name">Cash Reciept(PDF)</field>
+			<field name="model">account.voucher</field>
+			<field name="report_name">cash_register_reciept_aeroo_payment</field>
+			<field name="tml_source">file</field>
+			<field name="report_rml">cash_reciepts/report/Cash withdrawal receipt.odt</field>
+			<field name="parser_state">loc</field>
+			<field name="parser_loc">cash_reciepts/report/report_parser.py</field>
+			<field name="report_type">aeroo</field>
+			<field name="in_format">oo-odt</field>
+			<field name="out_format" ref="report_aeroo_ooo.report_mimetypes_pdf_odt"/>
+		</record>
+		
+		<record id="cash_register_aeroo_report_value_pdf_payment_odt" model="ir.values">
+            <field name="name">Cash Register (PDF)</field>
+            <field name="model">account.voucher</field>
+			<field name='multi' eval='False'/>
+            <field eval="'ir.actions.report.xml,' +str(aeroo_cash_register_report_payments_odt)" name="value_unpickle"/>
+        </record>
+		<record model="ir.actions.report.xml" id="aeroo_cash_register_report_payments_acceptance_odt">
+			<field name="name">Cash Reciept(PDF)</field>
+			<field name="model">account.voucher</field>
+			<field name="report_name">cash_register_reciept_aeroo_payment_acceptance</field>
+			<field name="tml_source">file</field>
+			<field name="report_rml">cash_reciepts/report/Cash acceptance receipt.odt</field>
+			<field name="parser_state">loc</field>
+			<field name="parser_loc">cash_reciepts/report/report_parser.py</field>
+			<field name="report_type">aeroo</field>
+			<field name="in_format">oo-odt</field>
+			<field name="out_format" ref="report_aeroo_ooo.report_mimetypes_pdf_odt"/>
+		</record>
+		
+		<record id="cash_register_aeroo_report_value_pdf_payment_acceptance_odt" model="ir.values">
+            <field name="name">Cash Register (PDF)</field>
+            <field name="model">account.voucher</field>
+			<field name='multi' eval='False'/>
+            <field eval="'ir.actions.report.xml,' +str(aeroo_cash_register_report_payments_acceptance_odt)" name="value_unpickle"/>
+        </record>
+        
+	</data>
+</openerp>

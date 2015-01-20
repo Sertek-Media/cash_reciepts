@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Sequences for sale.order -->
+        <record id="seq_cash_register_payment_cash" model="ir.sequence.type">
+            <field name="name">cash payment sequence</field>
+            <field name="code">cash.payment.sequence</field>
+        </record>
+
+        <record id="seq_cash_register_sequence_payment_cash" model="ir.sequence">
+            <field name="name">cash payment sequence</field>
+            <field name="code">cash.payment.sequence</field>
+            <field name="prefix">KIO</field>
+            <field name="padding">2</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<document filename="test.pdf">
+  <template pageSize="(595.0,842.0)" title="Test" author="Martin Simon" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="57.0" y1="57.0" width="481" height="728"/>
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <blockBackground colorName="#b2b2b2" start="0,0" stop="0,-1"/>
+      <blockBackground colorName="#b2b2b2" start="1,0" stop="1,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,1" stop="1,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="1,1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="1,1"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="P1" fontName="Times-Roman" alignment="LEFT"/>
+    <paraStyle name="P2" fontName="Times-Roman" alignment="CENTER"/>
+    <paraStyle name="P3" fontName="Times-Roman" alignment="LEFT"/>
+    <paraStyle name="P4" fontName="Times-Roman" alignment="LEFT"/>
+    <paraStyle name="P20" fontName="Times-Roman" alignment="RIGHT"/>
+    <paraStyle name="P5" fontName="Times-Roman" alignment="LEFT"/>
+    <paraStyle name="P6" fontName="Times-Roman" fontSize="9.0" leading="11" alignment="CENTER"/>
+    <paraStyle name="P7" rightIndent="18.0" leftIndent="0.0" fontName="Times-Roman" fontSize="9.0" leading="11" alignment="CENTER"/>
+    <paraStyle name="P8" rightIndent="18.0" leftIndent="0.0" fontName="Times-Roman" alignment="LEFT"/>
+    <paraStyle name="P9" fontName="Times-Roman" alignment="CENTER"/>
+    <paraStyle name="P10" fontName="Times-Roman" alignment="CENTER"/>
+    <paraStyle name="P11" fontName="Times-Roman" alignment="CENTER"/>
+    <paraStyle name="P12" fontName="Times-Roman" fontSize="12.0" leading="15" alignment="CENTER"/>
+    <paraStyle name="P13" fontName="Times-Roman" alignment="LEFT"/>
+    <paraStyle name="P14" rightIndent="18.0" leftIndent="0.0" fontName="Times-Roman" alignment="LEFT"/>
+    <paraStyle name="P15" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" alignment="LEFT"/>
+    <paraStyle name="P16" fontName="Times-Roman" alignment="CENTER"/>
+    <paraStyle name="Standard" fontName="Times-Roman"/>
+    <paraStyle name="Heading" fontName="Times-Roman" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="Text body" fontName="Times-Roman" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="List" fontName="Times-Roman" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Caption" fontName="Times-Roman" fontSize="12.0" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="Index" fontName="Times-Roman"/>
+    <paraStyle name="Table Contents" fontName="Times-Roman"/>
+    <images/>
+  </stylesheet>
+  <story>
+    <para style="P2">
+      <font color="white"> </font>
+    </para>
+    <para style="terp_default_8">[[ repeatIn(objects, 'o') ]]</para>
+    <para style="P9" alignment="CENTER" fontSize="10">[[o.company_id.name or '']] | [[o.company_id.street or '']] | Company Registry: [[o.company_id.company_registry or '']] | TAX ID: [[o.company_id.vat or '']]</para>  
+    <para style="P2">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="241.0,241.0" style="Table1">
+      <tr>
+        <td>
+          <para style="P9" alignment="LEFT" fontSize="14"><strong>KASOS PAJAMŲ ORDERIS</strong></para>
+        </td>
+        <td>
+          <para style="P9" alignment="RIGHT" fontSize="14"><strong>[[o.number or '']]</strong></para>
+        </td>
+      </tr>
+      <tr>
+      </tr>
+    </blockTable>
+    <para style="P2">
+      <font color="white"> </font>
+    </para>
+
+    <para style="P2">
+       <strong>[[o.date or '']]</strong>
+    </para>
+    <para style="P2">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="241.0,241.0" style="Table2">
+      <tr>
+        <td>
+          <para style="P10"><strong>Koresponduojanti sąskaita, subsąskaita</strong></para>
+        </td>
+        <td>
+          <para style="P10"><strong>Suma ([[o.currency_id.symbol]])</strong></para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P11">
+            [[o.partner_id.property_account_receivable.code or '']] [[o.partner_id.property_account_receivable.name or '']]
+          </para>
+        </td>
+        <td>
+          <para style="P11">
+            [[o.amount or '']] [[o.currency_id.symbol]]
+          </para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="P2">
+      <font color="white"> </font>
+    </para>
+    <para style="P8"><strong>Priimta iš:</strong> [[o.partner_id.name or '']] </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P8"><strong>Aprašymas:</strong> [[o.name or '']] </para>
+    <para style="P3">
+      <font color="white"> </font>
+    </para>
+    <para style="P13"><strong>Suma žodžiais:</strong> [[o.num2words or '']] </para>
+    <para style="P4">
+      <font color="white"> </font>
+    </para>
+    <para style="P15"><strong>Priedelis:</strong> 
+    </para>
+    <para style="P4">
+      <font color="white"> </font>
+    </para>
+    <para style="P5">
+      <strong>Buhalterio vardas, pavardė:</strong> [[o.partner_responsible.name]]
+      <font face="Times-Roman"/>
+    </para>
+    <para style="P3">
+      <font color="white"> </font>
+    </para>
+    <para style="P5">
+      <strong>Gavo kasininkas:</strong> [[o.partner_responsible.name]]
+    </para>
+    <para style="P6">
+      <font color="white"> </font>
+    </para>
+    <para style="P9">.................................................................................................................................................................................................................</para>
+    <para style="P6">
+      <font color="white"> </font>
+    </para>
+
+    <para style="P9" alignment="CENTER" fontSize="10">[[o.company_id.name or '']] | [[o.company_id.street or '']] | Company Registry: [[o.company_id.company_registry or '']] | TAX ID: [[o.company_id.vat or '']]</para>  
+    <para style="P2">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="241.0,241.0" style="Table1">
+      <tr>
+        <td>
+          <para style="P9" alignment="LEFT" fontSize="14"><strong>KASOS PAJAMŲ ORDERIS</strong></para>
+        </td>
+        <td>
+          <para style="P9" alignment="RIGHT" fontSize="14"><strong>[[o.number or '']]</strong></para>
+        </td>
+      </tr>
+      <tr>
+      </tr>
+    </blockTable>
+    <para style="P2">
+      <font color="white"> </font>
+    </para>
+
+    <para style="P2">
+       <strong>[[o.date or '']]</strong>
+    </para>
+    <para style="P2">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="241.0,241.0" style="Table2">
+      <tr>
+        <td>
+          <para style="P10"><strong>Koresponduojanti sąskaita, subsąskaita</strong></para>
+        </td>
+        <td>
+          <para style="P10"><strong>Suma ([[o.currency_id.symbol]])</strong></para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P11">
+            [[o.partner_id.property_account_receivable.code or '']] [[o.partner_id.property_account_receivable.name or '']]
+          </para>
+        </td>
+        <td>
+          <para style="P11">
+            [[o.amount or '']] [[o.currency_id.symbol]]
+          </para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="P2">
+      <font color="white"> </font>
+    </para>
+    <para style="P8"><strong>Priimta iš:</strong> [[o.partner_id.name or '']] </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P8"><strong>Aprašymas:</strong> [[o.name or '']] </para>
+    <para style="P3">
+      <font color="white"> </font>
+    </para>
+    <para style="P13"><strong>Suma žodžiais:</strong> [[o.num2words or '']] </para>
+    <para style="P4">
+      <font color="white"> </font>
+    </para>
+    <para style="P15"><strong>Priedelis:</strong> 
+    </para>
+    <para style="P4">
+      <font color="white"> </font>
+    </para>
+    <para style="P5">
+      <strong>Buhalterio vardas, pavardė:</strong> [[o.partner_responsible.name]]
+      <font face="Times-Roman"/>
+    </para>
+    <para style="P3">
+      <font color="white"> </font>
+    </para>
+    <para style="P5">
+      <strong>Gavo kasininkas:</strong> [[o.partner_responsible.name]]
+    </para>
+    <para style="P6">
+      <font color="white"> </font>
+    </para>
+  </story>
+</document>
+

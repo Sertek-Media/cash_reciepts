@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Sequences for sale.order -->
+        <record id="seq_cash_register_acceptance_payment" model="ir.sequence.type">
+            <field name="name">cash acceptance sequence</field>
+            <field name="code">cash.acceptance.sequence</field>
+        </record>
+
+        <record id="seq_cash_register_sequence_acceptance_payment" model="ir.sequence">
+            <field name="name">cash acceptance sequence</field>
+            <field name="code">cash.acceptance.sequence</field>
+            <field name="prefix">CAN13KPO</field>
+            <field name="padding">2</field>
+        </record>
+
+    </data>
+</openerp>
