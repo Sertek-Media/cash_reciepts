@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="report_cash_withdrawal">
+		        <div class="page">
+		            <div class="oe_structure"/>
+		            <div class="text-center">
+		            	<span t-esc="o.company_id.name or ''"></span> | <span t-esc="o.company_id.street or ''"></span> | Company Registry: <span t-esc="o.company_id.company_registry or ''"></span> | TAX ID: <span t-esc ="o.company_id.vat or ''"></span>
+		            </div>
+		            <div style ="background-color:#b2b2b2;height:50px;font-size:20px">
+		            	<span style="float:left;"><strong>Kasos išlaidų orderis Nr.</strong></span>
+		            	<span style="float:right;"><strong t-esc="o.number or ''"></strong></span>
+		            </div>
+		            <br/>
+		            <div class = "text-center">
+		            	<span t-esc="o.date or ''"></span>
+	            	</div>
+	            	<br/>
+	            	<table style="border:black solid 1px" class = "table">
+	            		<thead >
+	            			<th>
+	            				<strong style="font-size:16px">Koresponduojanti sąskaita, subsąskaita</strong>
+            				</th>
+        					<th>
+        						<strong style="font-size:16px">Suma (<span t-esc="o.currency_id.symbol or ''"></span>)</strong>
+    						</th>
+						</thead>
+						<tbody >
+							<tr>
+								<td>
+									<span style="font-size:14px" t-esc="o.partner_id.property_account_receivable.code or ''"></span> <span style="font-size:14px" t-esc = "o.partner_id.property_account_receivable.name or ''"></span>
+								</td>
+								<td>
+									<span style = "font-size:14px" t-esc="o.amount or ''"></span> <span style = "font-size:14px" t-esc="o.currency_id.symbol"></span>
+								</td>
+							</tr>
+						</tbody>
+            		</table>
+            		<br/>
+            		<div>
+            			<span><strong>Priimta iš:</strong></span> <span t-esc="o.partner_id.name or ''"></span> 
+        			</div>
+            		<div>
+            			<span><strong>Aprašymas:</strong></span> <span t-esc="o.name or ''"></span> 
+        			</div>
+            		<div>
+            			<span><strong>Suma žodžiais:</strong></span> <span t-esc="o.num2words or ''"></span> 
+        			</div>
+            		<div>
+            			<span><strong>Priedelis:</strong></span> <span t-esc="o.name or ''"></span> 
+        			</div>
+					<div>
+            			<span><strong>Buhalterio vardas, pavardė:</strong></span> <span t-esc="o.partner_responsible.name or  ''"></span> 
+        			</div>
+            		<div>		
+            			<span><strong>Išdavė:</strong></span> <span t-esc="o.partner_responsible.name or ''"></span> 
+        			</div>
+        			<br/>
+            		<div>		
+            			<span><strong>Gavau:</strong> __________________________________________________________________________________________</span> 
+        			</div>
+     	  			<br/>        			
+            		<div>		
+            			<span><strong>Data:</strong> __________________</span> 
+        			</div>					
+     	  			<br/>        			
+            		<div>		
+            			<span><strong>Gavėjo parašas:</strong> _____________________</span> 
+        			</div>        			
+					<br/>
+					<br/>
+					................................................................................................................................................................................................................................
+<!-- Break-->
+					<br/>
+					<br/>
+					<br/>
+		            <div class="oe_structure"/>
+		            <div class="text-center">
+		            	<span t-esc="o.company_id.name or ''"></span> | <span t-esc="o.company_id.street or ''"></span> | Company Registry: <span t-esc="o.company_id.company_registry or ''"></span> | TAX ID: <span t-esc ="o.company_id.vat or ''"></span>
+		            </div>
+		            <div style ="background-color:#b2b2b2;height:50px;font-size:20px">
+		            	<span style="float:left;"><strong>Kasos išlaidų orderis Nr.</strong></span>
+		            	<span style="float:right;"><strong t-esc="o.number or ''"></strong></span>
+		            </div>
+		            <br/>
+		            <div class = "text-center">
+		            	<span t-esc="o.date or ''"></span>
+	            	</div>
+	            	<br/>
+	            	<table style="border:black solid 1px" class = "table">
+	            		<thead >
+	            			<th>
+	            				<strong style="font-size:16px">Koresponduojanti sąskaita, subsąskaita</strong>
+            				</th>
+        					<th>
+        						<strong style="font-size:16px">Suma (<span t-esc="o.currency_id.symbol or ''"></span>)</strong>
+    						</th>
+						</thead>
+						<tbody >
+							<tr>
+								<td>
+									<span style="font-size:14px" t-esc="o.partner_id.property_account_receivable.code or ''"></span> <span style="font-size:14px" t-esc = "o.partner_id.property_account_receivable.name or ''"></span>
+								</td>
+								<td>
+									<span style = "font-size:14px" t-esc="o.amount or ''"></span> <span style = "font-size:14px" t-esc="o.currency_id.symbol"></span>
+								</td>
+							</tr>
+						</tbody>
+            		</table>
+            		<br/>
+            		<div>
+            			<span><strong>Priimta iš:</strong></span> <span t-esc="o.partner_id.name or ''"></span> 
+        			</div>
+            		<div>
+            			<span><strong>Aprašymas:</strong></span> <span t-esc="o.name or ''"></span> 
+        			</div>
+            		<div>
+            			<span><strong>Suma žodžiais:</strong></span> <span t-esc="o.num2words or ''"></span> 
+        			</div>
+            		<div>
+            			<span><strong>Priedelis:</strong></span> <span t-esc="o.name or ''"></span> 
+        			</div>
+					<div>
+            			<span><strong>Buhalterio vardas, pavardė:</strong></span> <span t-esc="o.partner_responsible.name or  ''"></span> 
+        			</div>
+            		<div>		
+            			<span><strong>Išdavė:</strong></span> <span t-esc="o.partner_responsible.name or ''"></span> 
+        			</div>
+        			<br/>
+            		<div>		
+            			<span><strong>Gavau: </strong>__________________________________________________________________________________________</span> 
+        			</div>
+     	  			<br/>        			
+            		<div>		
+            			<span><strong>Data: </strong>__________________</span> 
+        			</div>					
+     	  			<br/>        			
+            		<div>		
+            			<span><strong>Gavėjo parašas: </strong>_____________________</span> 
+        			</div>					
+				</div>				
+		</template>
+		
+		<template id="report_cash_withdrawal_repeat">
+		    <t t-call="report.html_container">
+		        <t t-foreach="doc_ids" t-as="doc_id">
+		            <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'cash_reciepts.report_cash_withdrawal')"/>
+		        </t>
+		    </t>
+		</template>
+		
+		<report id="report_cash_withdrawal_register"
+		        string="Cash Withdrawal Report"
+                model="account.voucher"
+			    report_type="qweb-pdf"
+			    file="cash_reciepts.report_cash_withdrawal"
+			    name="cash_reciepts.report_cash_withdrawal_repeat" />
+	</data>
+</openerp>
